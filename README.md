@@ -1,9 +1,9 @@
 # POKEDEX
 
 Nome dos integrantes: 
-- Pessoa 1
-- Pessoa 2
-- Pessoa 3
+- Magdiel Silva
+- Maria Helena V. C. de Souza
+- Silvio Ribeiro Dias Jr.
 
 Link do Surge: www.link.com.br
 
