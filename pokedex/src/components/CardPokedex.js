@@ -6,6 +6,25 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import axios from "axios";
+import { styled } from "@mui/system";
+
+const UpperCase = styled(Typography)(({ theme }) => ({
+    textTransform: 'capitalize',
+    textAlign: 'center'
+}))
+
+const AlignButtons = styled(CardActions)(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'center',
+  alignContent: 'center'
+}))
+
+const UpperCaseTypes = styled(Typography)(({ theme }) => ({
+  textTransform: 'capitalize',
+  textAlign: 'center'
+}))
+
 
 export default function ImgMediaCard(props) {
   const [imagePoke, setImagePoke] = useState({})
@@ -30,23 +49,23 @@ export default function ImgMediaCard(props) {
         image= {imagePoke.front_default}
       />
       <CardContent>
-        <Typography gutterBottom variant="h6" component="div">
+        <UpperCase gutterBottom variant="h6" component="div">
           {props.name}
-        </Typography>
+        </UpperCase>
         {(pokemons.types) &&
-        (<Typography variant="body2" color="text.secondary">
+        (<UpperCaseTypes variant="body2" color="text.secondary">
           {pokemons.types.map((tipo) => {
             return(
             <div>
               {tipo.type.name}
             </div>)
             })} 
-        </Typography>)}
+        </UpperCaseTypes>)}
       </CardContent>
-      <CardActions>
+      <AlignButtons>
         <Button variant={"contained"} color={"primary"} size="small">ADICIONAR</Button>
         <Button size="small"  onClick={() => props.onClickDetalhe(props.name)}>DETALHES</Button>
-      </CardActions>
+      </AlignButtons>
     </Card>
   );
 }
