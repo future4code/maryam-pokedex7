@@ -22,6 +22,17 @@ export const Container = styledComponentsCjs.div`
     margin: 30px;
 `
 
+//----------Styled Footer
+
+export const StyledFooter = styled.footer`
+    background-color: #ffffff;
+    font-family: "Roboto";
+    text-decoration: none;
+`
+export const StyledLogo = styled.img`
+    width: 15vw;
+`
+  
 //---------- CardPokeDex
 
 export const AlignPhotos = styledComponentsCjs.div `
@@ -54,7 +65,3 @@ export const UpperCaseTypes = styled(Typography)(({ theme }) => ({
 export const PokePhoto = styled(CardMedia)(({ theme }) => ({
   padding: '0.5rem'
 }))
-
-
-
-
