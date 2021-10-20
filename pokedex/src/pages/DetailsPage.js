@@ -1,8 +1,10 @@
-import React from "react"
+import React, { useContext } from "react"
 import axios from "axios"
 import styledComponentsCjs from "styled-components"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
+import { GlobalContext } from "../context/GlobalContext"
+import Login from "../components/Login"
 
 const Container = styledComponentsCjs.div `
     display: flex;
@@ -10,6 +12,7 @@ const Container = styledComponentsCjs.div `
     align-items: center;
     width: 100vw;
     max-width: 100%;
+    min-height: 80vh;
 `
 
 const ContainerPictures = styledComponentsCjs.div `
@@ -87,21 +90,28 @@ export const DetailsPage = () => {
     const [pokeDetails, setPokeDetails] = useState([])
     const params = useParams()
     const url = `https://pokeapi.co/api/v2/pokemon/${params.name}`
+    const {login, setLogin} = useContext(GlobalContext)
 
     useEffect(() => {
+        setLogin(true)
         axios
         .get(url)
         .then((res) => {
             setPokeDetails(res.data)
+            setLogin(false)
         })
         .catch((err) => {
             window.alert("Ocorreu um erro! Tente novamente.")
+            setLogin(false)
         })
     }, [url])
     
     return(
         <Container>
-
+            {(login === true) ?
+            (<Login />)
+            :
+            (<Container>
             <ContainerPictures>
             <PictureFront>
                 {(pokeDetails.stats) && (<img 
@@ -138,6 +148,7 @@ export const DetailsPage = () => {
                 })}
             </MainAttacks>
             </TypesAndAttacksContainer>
+            </Container>)}
 
         </Container>
     )

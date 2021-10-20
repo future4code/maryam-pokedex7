@@ -24,10 +24,14 @@ export const Container = styledComponentsCjs.div`
 
 //----------Styled Footer
 
-export const StyledFooter = styledComponentsCjs.footer`
+export const StyledFooter = styledComponentsCjs.div`
     background-color: #ffffff;
     font-family: "Roboto";
     text-decoration: none;
+    .page-wrap:after{
+      height: 20vh
+    }
+
 `
 export const StyledLogo = styledComponentsCjs.img`
     width: 15vw;
