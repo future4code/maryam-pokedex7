@@ -1,30 +1,9 @@
 import React, {useEffect, useState} from "react"
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import axios from "axios";
-import { styled } from "@mui/system";
-
-const UpperCase = styled(Typography)(({ theme }) => ({
-    textTransform: 'capitalize',
-    textAlign: 'center'
-}))
-
-const AlignButtons = styled(CardActions)(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'row',
-  justifyContent: 'center',
-  alignContent: 'center'
-}))
-
-const UpperCaseTypes = styled(Typography)(({ theme }) => ({
-  textTransform: 'capitalize',
-  textAlign: 'center'
-}))
-
+import Card from '@mui/material/Card'
+import CardContent from '@mui/material/CardContent'
+import Button from '@mui/material/Button'
+import axios from "axios"
+import { AlignPhotos, UpperCase, AlignButtons, UpperCaseTypes, PokePhoto } from '../styled/Styled'
 
 export default function ImgMediaCard(props) {
   const [imagePoke, setImagePoke] = useState({})
@@ -42,12 +21,15 @@ export default function ImgMediaCard(props) {
 
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
+      <AlignPhotos>
+      <PokePhoto
         component="img"
         alt={props.name}
         height="140"
-        image= {imagePoke.front_default}
+        image={imagePoke.front_default}
+        style={{height: 120, width: 120}}
       />
+      </AlignPhotos>
       <CardContent>
         <UpperCase gutterBottom variant="h6" component="div">
           {props.name}
@@ -67,5 +49,5 @@ export default function ImgMediaCard(props) {
         <Button size="small"  onClick={() => props.onClickDetalhe(props.name)}>DETALHES</Button>
       </AlignButtons>
     </Card>
-  );
+  )
 }
