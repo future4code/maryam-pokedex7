@@ -22,15 +22,18 @@ export default function ImgMediaCard(props) {
     })
   }, [props.name])
 
-  const onClickAdicionar = () => {
+  const onClickExcluir = () => {
 
     const position = pokedex.findIndex((item) => {
       return item === props.name
     })
 
-    if (position === -1){
-      setPokedex([... pokedex, props.name])
-    }
+    const newPokedex = [... pokedex]
+    
+    newPokedex.splice(position, 1)
+   
+    setPokedex(newPokedex)
+    
 
   }
 
@@ -60,7 +63,7 @@ export default function ImgMediaCard(props) {
         </UpperCaseTypes>)}
       </CardContent>
       <AlignButtons>
-        <Button variant={"contained"} color={"primary"} size="small" onClick={onClickAdicionar} >ADICIONAR</Button>
+        <Button variant={"contained"} color={"primary"} size="small" onClick={onClickExcluir} >EXCLUIR</Button>
         <Button size="small"  onClick={() => props.onClickDetalhe(props.name)}>DETALHES</Button>
       </AlignButtons>
     </Card>
