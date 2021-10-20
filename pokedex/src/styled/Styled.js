@@ -1,5 +1,9 @@
-import { createGlobalStyle } from "styled-components";
-import styled from "styled-components"
+import { createGlobalStyle } from "styled-components"
+import styledComponentsCjs from "styled-components"
+import { styled } from "@mui/system"
+import Typography from '@mui/material/Typography'
+import CardActions from '@mui/material/CardActions'
+import CardMedia from '@mui/material/CardMedia'
 
 export const Styled = createGlobalStyle `
 body{
@@ -11,7 +15,7 @@ body{
 `
 //----------Styled CardPokedex
 
-export const Container = styled.div`
+export const Container = styledComponentsCjs.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 40px;
@@ -29,3 +33,35 @@ export const StyledLogo = styled.img`
     width: 15vw;
 `
   
+//---------- CardPokeDex
+
+export const AlignPhotos = styledComponentsCjs.div `
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
+
+export const UpperCase = styled(Typography)(({ theme }) => ({
+    textTransform: 'capitalize',
+    textAlign: 'center'
+}))
+
+
+export const AlignButtons = styled(CardActions)(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'center',
+  alignContent: 'center'
+}))
+
+
+export const UpperCaseTypes = styled(Typography)(({ theme }) => ({
+  textTransform: 'capitalize',
+  textAlign: 'center'
+}))
+
+
+export const PokePhoto = styled(CardMedia)(({ theme }) => ({
+  padding: '0.5rem'
+}))
