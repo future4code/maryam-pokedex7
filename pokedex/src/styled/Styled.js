@@ -17,3 +17,15 @@ export const Container = styled.div`
     gap: 40px;
     margin: 30px;
 `
+
+//----------Styled Footer
+
+export const StyledFooter = styled.footer`
+    background-color: #ffffff;
+    font-family: "Roboto";
+    text-decoration: none;
+`
+export const StyledLogo = styled.img`
+    width: 15vw;
+`
+  

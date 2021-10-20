@@ -5,6 +5,9 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
+import { StyledLogo } from '../styled/Styled';
+
+
 
 export default function ButtonAppBar() {
   return (
@@ -16,13 +19,14 @@ export default function ButtonAppBar() {
             edge="start"
             color="inherit"
             aria-label="menu"
-            sx={{ mr: 2 }}
+            sx={{ mr: 2}}
           >
+          <StyledLogo src={"./logo.png"} />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Pokedex
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} textAlign="center">
+            Lista de Pokémons
           </Typography>
-          <Button color="inherit">Detalhes</Button>
+          <Button variant={"contained"} color="error">Minha Pokedex</Button>
         </Toolbar>
       </AppBar>
     </Box>

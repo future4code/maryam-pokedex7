@@ -48,7 +48,6 @@ export const HomePage = () => {
 
   return (
     <div>
-      <Header />
       <Container>{listPokemons}</Container>
       {(navPokemons.previous !== null) &&
       (<Button variant={"contained"} onClick={() => nextPokemonPage(navPokemons.previous)} >Previous Page</Button>)}
