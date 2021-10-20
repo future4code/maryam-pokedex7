@@ -2,6 +2,7 @@ import React from "react"
 import axios from "axios"
 import styledComponentsCjs from "styled-components"
 import { useState, useEffect } from "react"
+import { useParams } from "react-router-dom"
 
 const Container = styledComponentsCjs.div `
     display: flex;
@@ -84,7 +85,8 @@ const MainAttacks = styledComponentsCjs.div `
 
 export const DetailsPage = () => {
     const [pokeDetails, setPokeDetails] = useState([])
-    const url = "https://pokeapi.co/api/v2/pokemon/1/"
+    const params = useParams()
+    const url = `https://pokeapi.co/api/v2/pokemon/${params.name}`
 
     useEffect(() => {
         axios
