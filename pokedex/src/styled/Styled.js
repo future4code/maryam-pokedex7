@@ -36,7 +36,29 @@ export const StyledFooter = styledComponentsCjs.div`
 export const StyledLogo = styledComponentsCjs.img`
     width: 15vw;
 `
-  
+//---------- AboutPage
+
+export const CardAbout = styledComponentsCjs.div`
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 50px;
+    background-color: #ffffff;
+    text-align: center;
+    width: 20vw;
+    margin:30px;
+    font-family: "Roboto";
+    padding:30px;
+`
+export const ContainerAbout = styledComponentsCjs.div`
+    display: flex;
+    justify-content:space-between;
+    gap: 40px;
+    margin: 20px;
+`
+export const ImageAbout = styledComponentsCjs.div`
+    display:flex;
+    justify-content:center;
+    margin-bottom:20px;
+
+`
 //---------- CardPokeDex
 
 export const AlignPhotos = styledComponentsCjs.div `
