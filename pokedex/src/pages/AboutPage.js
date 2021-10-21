@@ -1,9 +1,8 @@
 import * as React from "react";
 import Avatar from "@mui/material/Avatar";
 import Typography from "@mui/material/Typography";
-import Box from "@material-ui/core/Box";
 import Link from "@material-ui/core/Link";
-import { CardAbout, ContainerAbout, ImageAbout } from "../styled/Styled";
+import { CardAbout, ContainerAbout, ImageAbout, AlignContact } from "../styled/Styled";
 
 export const AboutPage = () => {
   return (
@@ -22,17 +21,17 @@ export const AboutPage = () => {
           sx={{ flexGrow: 1 }}
           textAlign="center"
         >
-          <b>Maria Helena</b>
+          <b>Maria Helena Souza</b>
         </Typography>
         <p>
           Maria Helena é formada em Relações Internacionais na Universidade
-          Federal Rural do Rio de Janeiro UFRRJ, e atualmente faz licenciatura
-          em português/japonês na Universidade Cruzeiro do Sul UNICSUL. Também é
-          estudante de full stack web development, na Labenu. Sou uma pessoa que
-          gosta muito de aprender coisas novas, e estou em transição de carreira
-          para a área de tecnologia! 😺
+          Federal Rural do Rio de Janeiro, e atualmente faz licenciatura
+          em Português & Japonês na Universidade Cruzeiro do Sul. Está em 
+          transição de carreira para a área de tecnologia, e também é
+          estudante de Fullstack Web Development na Labenu. Possui conhecimentos 
+          em HTML, CSS, JavaScript, React, entre outros.
         </p>
-        <div>
+        <AlignContact>
         <Link
             href="https://www.linkedin.com/in/lenasouza/"
             target="_blank"
@@ -41,8 +40,8 @@ export const AboutPage = () => {
           >
             Linkedin
           </Link>
-        </div>
-        <div>
+        </AlignContact>
+        <AlignContact>
           <Link
             href="https://github.com/mhsouza88"
             target="_blank"
@@ -51,7 +50,7 @@ export const AboutPage = () => {
           >
             GitHub
           </Link>
-          </div>
+          </AlignContact>
       </CardAbout>
       <CardAbout>
         <ImageAbout>
@@ -77,7 +76,7 @@ export const AboutPage = () => {
           relacionadas ao desenvolvimento de sistemas. Algumas das ferramentas e
           linguagens foco de estudo até aqui: JavaScript, CSS, HTML e React.
         </p>
-        <div>
+        <AlignContact>
           <Link
             href="https://www.linkedin.com/in/silvio-dias-junior/"
             target="_blank"
@@ -86,8 +85,8 @@ export const AboutPage = () => {
           >
             Linkedin
           </Link>
-          </div>
-
+          </AlignContact>
+          <AlignContact>
           <Link
             href="https://github.com/silviordjr"
             target="_blank"
@@ -96,6 +95,7 @@ export const AboutPage = () => {
           >
             GitHub
           </Link>
+          </AlignContact>
       </CardAbout>
       <CardAbout>
         <ImageAbout>
@@ -121,7 +121,7 @@ export const AboutPage = () => {
           usabilidade e com foco na otimização, tanto no front-end como no
           back-end.
         </p>
-        <div>
+        <AlignContact>
           <Link
             href="https://www.linkedin.com/in/magdiel-silva-3680881a6/"
             target="_blank"
@@ -130,8 +130,8 @@ export const AboutPage = () => {
           >
             Linkedin
           </Link>
-          </div>
-          <div>
+          </AlignContact>
+          <AlignContact>
           <Link
             href="https://github.com/dev-magdielSilva"
             target="_blank"
@@ -140,7 +140,7 @@ export const AboutPage = () => {
           >
             GitHub
           </Link>
-          </div>
+          </AlignContact>
       </CardAbout>
     </ContainerAbout>
   );

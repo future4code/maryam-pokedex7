@@ -49,24 +49,42 @@ export const StyledLogo = styledComponentsCjs.img`
 
 export const CardAbout = styledComponentsCjs.div`
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 50px;
+    border-radius: 0.3rem;
     background-color: #ffffff;
-    text-align: center;
+    text-align: justify;
     width: 20vw;
     margin:30px;
     font-family: "Roboto";
     padding:30px;
+
+    @media screen and (min-device-width: 200px) and (max-device-width: 667px) {
+      width: 14rem;
+      margin: 0.5rem;
 `
 export const ContainerAbout = styledComponentsCjs.div`
     display: flex;
     justify-content:space-between;
     gap: 40px;
     margin: 20px;
+
+    @media screen and (min-device-width: 200px) and (max-device-width: 667px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 `
 export const ImageAbout = styledComponentsCjs.div`
     display:flex;
     justify-content:center;
     margin-bottom:20px;
+`
 
+export const AlignContact = styledComponentsCjs.div `
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 `
 //---------- CardPokeDex
 
