@@ -18,7 +18,7 @@ export const HomePage = () => {
   const [pokemonsList, setPokemonsList] = useState([]);
   const [navPokemons, setNavPokemons] = useState([])
   const history = useHistory()
-  const {login, setLogin} = useContext(GlobalContext)
+  const {login, setLogin, pokedex} = useContext(GlobalContext)
 
   useEffect(() => {
     setLogin(true)
@@ -59,7 +59,14 @@ export const HomePage = () => {
 
  
   const listPokemons = pokemonsList.map((pokemon) => {
-    return <CardPokedex name={pokemon.name} onClickDetalhe={onClickDetalhe} />;
+
+    let position = pokedex.findIndex((item) => {
+      return item === pokemon.name
+    })
+
+    if (position === -1){
+      return <CardPokedex name={pokemon.name} onClickDetalhe={onClickDetalhe} />;
+    }
   });
   
 
