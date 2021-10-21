@@ -9,10 +9,20 @@ import Login from "../components/Login"
 const Container = styledComponentsCjs.div `
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 100vw;
     max-width: 100%;
     min-height: 80vh;
+
+    h3 {
+        line-height: 1rem;
+    }
+
+    @media screen and (min-device-width: 200px) and (max-device-width: 667px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
 `
 
 const ContainerPictures = styledComponentsCjs.div `
@@ -21,11 +31,12 @@ const ContainerPictures = styledComponentsCjs.div `
 `
 
 const PictureFront = styledComponentsCjs.div `
-    border-radius: 1rem;
-    background-color: lightgrey;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    border-radius: 0.3rem;
+    background-color: white;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
     img {
         width: 8rem;
@@ -33,9 +44,10 @@ const PictureFront = styledComponentsCjs.div `
 `
 
 const PictureBack = styledComponentsCjs.div `
-    border-radius: 1rem;
-    background-color: lightgrey;
+    border-radius: 0.3rem;
+    background-color: white;
     padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
     img {
         width: 8rem;
@@ -45,13 +57,21 @@ const PictureBack = styledComponentsCjs.div `
 const PowerTable = styledComponentsCjs.div `
     display: flex; 
     flex-direction: column;
-    border-radius: 1rem;
-    background-color: lightgrey;
+    border-radius: 0.3rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: white;
     width: 15rem;
     padding: 1rem;
     margin-top: 2rem;
     margin-left: 1rem;
+    margin-bottom: 1rem;
     line-height: 2rem;
+    font-family: 'Roboto';
+    text-transform: capitalize;
+
+    h3 {
+        text-align: center;
+    }
 `
 
 const TypesAndAttacksContainer = styledComponentsCjs.div `
@@ -64,25 +84,34 @@ const Types = styledComponentsCjs.div `
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 1rem;
-    background-color: lightgrey;
+    border-radius: 0.3rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: white;
     padding: 1rem;
     margin-left: 1rem;
     margin-bottom: 2rem;
     margin-top: 2rem;
+    font-family: 'Roboto';
+    line-height: 2rem;
+    text-transform: capitalize;
+
 `
 
 const MainAttacks = styledComponentsCjs.div `
     display: flex;
     flex-direction: column;
-    border-radius: 1rem;
-    background-color: lightgrey;
+    border-radius: 0.3rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: white;
     padding: 1rem;
     margin-left: 1rem;
-    line-height: 2rem;
-
+    line-height: 0.5rem;
+    font-family: 'Roboto';
+    text-transform: capitalize;
+    text-align: center;
+    
     h3 {
-        line-height: 1rem;
+        text-align: center;
     }
 `
 
@@ -129,6 +158,7 @@ export const DetailsPage = () => {
             </ContainerPictures>
 
             <PowerTable>
+            <h3>Stats</h3>
                 {(pokeDetails.stats) && pokeDetails.stats.map((stats) => {
                     return <p><b>{stats.stat.name}: </b>{stats.base_stat}</p>
                 })}
@@ -136,13 +166,14 @@ export const DetailsPage = () => {
 
             <TypesAndAttacksContainer>
             <Types>
+            <h3>Tipos</h3>
                 {(pokeDetails.types) && pokeDetails.types.map((type) => {
                     return <i>{type.type.name}</i>
                 })}
             </Types>
 
             <MainAttacks>
-                <h3>Principais ataques</h3>
+                <h3>Ataques</h3>
                 {(pokeDetails.moves) && pokeDetails.moves.map((attack, indexOfAttacks) => {
                     return indexOfAttacks < 3 && <p>{attack.move.name}</p>
                 })}
