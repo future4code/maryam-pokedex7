@@ -190,6 +190,10 @@ export default function ImgMediaCard(props) {
     const newPokedex = [...pokedex]
     
     newPokedex.splice(position, 1)
+    
+    if (newPokedex.length === 0){
+      window.localStorage.setItem("pokedex", JSON.stringify(newPokedex))
+    }
    
     setPokedex(newPokedex)
     
