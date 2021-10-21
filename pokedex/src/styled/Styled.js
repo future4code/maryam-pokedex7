@@ -20,6 +20,11 @@ export const Container = styledComponentsCjs.div`
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 40px;
     margin: 30px;
+
+    @media screen and (min-device-width: 200px) and (max-device-width: 667px) {
+      display: flex;
+      flex-direction: column;
+    }
 `
 
 //----------Styled Footer
@@ -35,6 +40,10 @@ export const StyledFooter = styledComponentsCjs.div`
 `
 export const StyledLogo = styledComponentsCjs.img`
     width: 15vw;
+
+    @media screen and (min-device-width: 200px) and (max-device-width: 667px) {
+      width: 30vw;
+    }
 `
   
 //---------- CardPokeDex
@@ -56,7 +65,8 @@ export const AlignButtons = styled(CardActions)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'center',
-  alignContent: 'center'
+  alignContent: 'center',
+  
 }))
 
 

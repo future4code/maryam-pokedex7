@@ -1,17 +1,23 @@
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import Header from "../components/Header";
 import Button from '@mui/material/Button';
 import { Container } from "../styled/Styled";
 import CardPokedex from "../components/CardPokedex";
 import { useHistory } from "react-router-dom";
 import styledComponentsCjs from "styled-components";
 import { GlobalContext } from "../context/GlobalContext";
-import { textFieldClasses } from "@mui/material";
 import Login from "../components/Login";
 
 const MainHome = styledComponentsCjs.div`
   min-height: 80vh;
+`
+
+const AlignNextAndPrevious = styledComponentsCjs.div `
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem;
 `
 
 export const HomePage = () => {
@@ -69,13 +75,13 @@ export const HomePage = () => {
       (<Login />)
       :
       (
-      <div>
+        <AlignNextAndPrevious>
         <Container>{listPokemons}</Container>
         {(navPokemons.previous !== null) &&
-        (<Button variant={"contained"} onClick={() => nextPokemonPage(navPokemons.previous)} >Previous Page</Button>)}
+        (<Button variant={"contained"} onClick={() => nextPokemonPage(navPokemons.previous)} sx={{margin: '1rem'}}>Página Anterior</Button>)}
         {(navPokemons.next !== null) &&
-        (<Button variant={"contained"} onClick={() => nextPokemonPage(navPokemons.next)} >Next Page</Button>)}
-      </div>)}
+        (<Button variant={"contained"} onClick={() => nextPokemonPage(navPokemons.next)} >Próxima Página</Button>)}
+      </AlignNextAndPrevious>)}
 
     </MainHome>
   );

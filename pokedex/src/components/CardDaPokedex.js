@@ -28,7 +28,7 @@ export default function ImgMediaCard(props) {
       return item === props.name
     })
 
-    const newPokedex = [... pokedex]
+    const newPokedex = [...pokedex]
     
     newPokedex.splice(position, 1)
    
@@ -38,14 +38,14 @@ export default function ImgMediaCard(props) {
   }
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ minWidth: 275, maxWidth: 365 }}>
       <AlignPhotos>
       <PokePhoto
         component="img"
         alt={props.name}
         height="140"
         image={imagePoke.front_default}
-        style={{height: 120, width: 120}}
+        style={{height: 120, width: 120,}}
       />
       </AlignPhotos>
       <CardContent>

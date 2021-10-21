@@ -29,13 +29,13 @@ export default function ImgMediaCard(props) {
     })
 
     if (position === -1){
-      setPokedex([... pokedex, props.name])
+      setPokedex([...pokedex, props.name])
     }
 
   }
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ minWidth: 275, maxWidth: 365 }}>
       <AlignPhotos>
       <PokePhoto
         component="img"
