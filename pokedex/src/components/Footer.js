@@ -20,11 +20,6 @@ export const Footer = () => {
                             </Link>
                         </Box>
                         <Box>
-                            <Link href="/details" color="inherit" underline="none">
-                                Detalhes
-                            </Link>
-                        </Box>
-                        <Box>
                             <Link href="/pokedex" color="inherit" underline="none">
                                 Pokedex
                             </Link>
@@ -34,14 +29,10 @@ export const Footer = () => {
                     <Grid item xs={12} sm={4}>
                         <Box borderBottom={1} > Quem somos </Box>
                         <br/>
+                       
                         <Box>
-                            <Link href="/" color="inherit" underline="none">
+                            <Link href="/about" color="inherit" underline="none">
                                 Sobre
-                            </Link>
-                        </Box>
-                        <Box>
-                            <Link href="/details" color="inherit" underline="none">
-                                Equipe
                             </Link>
                         </Box>
                     </Grid>
@@ -50,17 +41,17 @@ export const Footer = () => {
                         <Box borderBottom={1}>Siga as nosas redes sociais:</Box>
                         <br/>
                         <Box>
-                            <Link href="" color="inherit" underline="none">
+                            <Link href="https://www.facebook.com/"  target="_blank" color="inherit" underline="none">
                                 Facebook
                             </Link>
                         </Box>
                         <Box>
-                            <Link href="/" color="inherit" underline="none">
+                            <Link href="https://www.instagram.com/"  target="_blank" color="inherit" underline="none">
                                 Instagram
                             </Link>
                         </Box>
                         <Box>
-                            <Link href="/" color="inherit" underline="none">
+                            <Link href="https://www.tiktok.com/pt-BR/"  target="_blank" color="inherit" underline="none">
                                 TikTok
                             </Link>
                         </Box>
