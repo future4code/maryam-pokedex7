@@ -11,7 +11,9 @@ export const Router = () => {
     const {pokedex, setPokedex} = useContext(GlobalContext)
 
     useEffect(() => {
-        window.localStorage.setItem("pokedex", JSON.stringify(pokedex))
+        if (pokedex.length > 0){
+            window.localStorage.setItem("pokedex", JSON.stringify(pokedex))
+        }
     }, [pokedex])
 
     useEffect(() => {
