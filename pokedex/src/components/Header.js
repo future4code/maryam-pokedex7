@@ -1,12 +1,12 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import { StyledLogo } from '../styled/Styled';
-import { useHistory } from 'react-router-dom';
+import * as React from 'react'
+import AppBar from '@mui/material/AppBar'
+import Box from '@mui/material/Box'
+import Toolbar from '@mui/material/Toolbar'
+import Typography from '@mui/material/Typography'
+import Button from '@mui/material/Button'
+import IconButton from '@mui/material/IconButton'
+import { StyledLogo } from '../styled/Styled'
+import { useHistory } from 'react-router-dom'
 
 
 export default function ButtonAppBar() {
@@ -31,15 +31,21 @@ export default function ButtonAppBar() {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2}}
-          >
-          <StyledLogo src={"./logo.png"} />
+            >
+            <a
+            href="/" 
+            rel="noreferrer" 
+            >
+            <StyledLogo src={"./logo.png"} 
+            />
+            </a>
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }} textAlign="center" onClick={onClickHome} >
-            Lista de Pokémons
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: {xs: 'none', sm: 'block'} }} textAlign="center" onClick={onClickHome} >
+            LISTA DE POKÉMONS
           </Typography>
-          <Button variant={"contained"} color="error" onClick={onClickPokedex} >Minha Pokedex</Button>
+          <Button variant={"contained"} color="error" onClick={onClickPokedex} >MINHA POKÉDEX</Button>
         </Toolbar>
       </AppBar>
     </Box>
-  );
+  )
 }
