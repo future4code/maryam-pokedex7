@@ -10,6 +10,7 @@ import Login from "../components/Login";
 
 const MainPokedex = styledComponentsCjs.div`
     min-height: 80vh;
+    font-family: 'Roboto';
 `
 
 

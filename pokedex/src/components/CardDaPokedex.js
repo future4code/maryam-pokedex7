@@ -12,7 +12,8 @@ const TipoGrama = styledComponentsCjs.div`
   margin-right: 1vw;
   padding-right: 1vw;
   padding-left: 1vw;
-  border-radius: 8px
+  border-radius: 8px;
+  color: white;
 `
 
 const TipoFogo = styledComponentsCjs.div`
@@ -28,7 +29,8 @@ const TipoAgua = styledComponentsCjs.div`
   margin-right: 1vw;
   padding-right: 1vw;
   padding-left: 1vw;
-  border-radius: 8px
+  border-radius: 8px;
+  color: white;
 `
 
 const TipoPoison = styledComponentsCjs.div`
@@ -36,14 +38,16 @@ const TipoPoison = styledComponentsCjs.div`
   margin-right: 1vw;
   padding-right: 1vw;
   padding-left: 1vw;
-  border-radius: 8px
+  border-radius: 8px;
+  color: white;
 `
 const TipoLuta = styledComponentsCjs.div`
   background-color: red;
   margin-right: 1vw;
   padding-right: 1vw;
   padding-left: 1vw;
-  border-radius: 8px
+  border-radius: 8px;
+  color: white;
 `
 
 const TipoVoador = styledComponentsCjs.div`
@@ -83,7 +87,8 @@ const TipoPedra = styledComponentsCjs.div`
   margin-right: 1vw;
   padding-right: 1vw;
   padding-left: 1vw;
-  border-radius: 8px
+  border-radius: 8px;
+  color: white;
 `
 
 const TipoGelo = styledComponentsCjs.div`
@@ -99,7 +104,8 @@ const TipoDragao = styledComponentsCjs.div`
   margin-right: 1vw;
   padding-right: 1vw;
   padding-left: 1vw;
-  border-radius: 8px
+  border-radius: 8px;
+  color: white;
 `
 
 const TipoFantasma = styledComponentsCjs.div`
@@ -107,7 +113,8 @@ const TipoFantasma = styledComponentsCjs.div`
   margin-right: 1vw;
   padding-right: 1vw;
   padding-left: 1vw;
-  border-radius: 8px
+  border-radius: 8px;
+  color: white;
 `
 
 const TipoDark = styledComponentsCjs.div`
@@ -115,7 +122,8 @@ const TipoDark = styledComponentsCjs.div`
   margin-right: 1vw;
   padding-right: 1vw;
   padding-left: 1vw;
-  border-radius: 8px
+  border-radius: 8px;
+  color: white;
 `
 
 const TipoSteel = styledComponentsCjs.div`
