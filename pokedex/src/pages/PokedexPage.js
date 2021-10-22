@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useState } from "react"
 import React from "react"
 import { GlobalContext } from '../context/GlobalContext'
 import { Container } from "../styled/Styled";
@@ -17,14 +17,23 @@ const MainPokedex = styledComponentsCjs.div`
 export const PokedexPage = () => {
    const {pokedex, setPokedex, login, setLogin} = useContext(GlobalContext)
    const history = useHistory()
+   const [pokeBattle, setPokeBattle] = useState([])
 
 
    const onClickDetalhe = (name) => {
        history.push(`/details/${name}`)
     }
 
+    const selecionaPokemon = (pokemon) => {
+        setPokeBattle(pokemon)
+    }
+
+    const onClickBattle = (name) => {
+        history.push(`/battle/${name}`)
+    }
+
    const listPokemons = pokedex.map((pokemon) => {
-    return <CardPokedex name={pokemon} onClickDetalhe={onClickDetalhe} />;
+    return <CardPokedex  selecionaPokemon={selecionaPokemon}  name={pokemon} onClickDetalhe={onClickDetalhe} />;
   });
 
     return(
@@ -38,6 +47,7 @@ export const PokedexPage = () => {
                     (listPokemons)
                     :
                     (<div>Você ainda não possui pokemons em sua pokedex.</div>)}
+                    <button onClick={() => onClickBattle(pokeBattle)}>Iniciar batalha</button>
                 </Container>
             </div>)}
         </MainPokedex>

@@ -300,7 +300,7 @@ export default function ImgMediaCard(props) {
     })
 
   return (
-    <Card sx={{ minWidth: 275, maxWidth: 365 }}>
+    <Card onClick={() => props.selecionaPokemon(props.name)} sx={{ minWidth: 275, maxWidth: 365 }}>
       <AlignPhotos>
       <PokePhoto
         component="img"

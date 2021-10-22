@@ -8,6 +8,7 @@ import { AboutPage } from "../pages/AboutPage";
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import { GlobalContext } from "../context/GlobalContext";
 import ErrorPage from "../pages/ErrorPage";
+import BattlePage from "../pages/BattlePage";
 
 export const Router = () => {
     const {pokedex, setPokedex} = useContext(GlobalContext)
@@ -41,7 +42,9 @@ export const Router = () => {
             <Route exact path={"/about"}>
                 <AboutPage/>
             </Route>
-
+            <Route exact path={'/battle/:name'}>
+                <BattlePage/>
+            </ Route>
             <Route path={'*'}>
                 <ErrorPage />
             </Route>
