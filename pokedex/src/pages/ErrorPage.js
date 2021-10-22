@@ -10,6 +10,7 @@ const MainError = styledComponentsCjs.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: 'Roboto';
 `
 
 const Gif = styledComponentsCjs.img`
