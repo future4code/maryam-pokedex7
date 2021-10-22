@@ -11,7 +11,7 @@ Nome dos integrantes:
 http://adamant-structure.surge.sh/
 
 # O que funciona:
-- Tudo o que foi pedido no enunciado do projeto. Porém na nossa batalha, ao invés do usuário selecionar dois Pokémons, colocamos o Pokémon selecionado para batalhar com outro aleatório, para ficar mais parecido com os jogos da franquia!
+- Tudo o que foi pedido no enunciado do projeto. Porém na nossa batalha, ao invés do usuário selecionar dois Pokémons, colocamos o Pokémon selecionado para batalhar com outro aleatório para ficar mais parecido com os jogos da franquia!
 
 # Imagens:
 - Homepage
