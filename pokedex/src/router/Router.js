@@ -7,6 +7,7 @@ import { AboutPage } from "../pages/AboutPage";
 
 import { Route, Switch, BrowserRouter } from "react-router-dom";
 import { GlobalContext } from "../context/GlobalContext";
+import ErrorPage from "../pages/ErrorPage";
 
 export const Router = () => {
     const {pokedex, setPokedex} = useContext(GlobalContext)
@@ -39,6 +40,10 @@ export const Router = () => {
             </Route>
             <Route exact path={"/about"}>
                 <AboutPage/>
+            </Route>
+
+            <Route path={'*'}>
+                <ErrorPage />
             </Route>
         </Switch>
         </BrowserRouter>

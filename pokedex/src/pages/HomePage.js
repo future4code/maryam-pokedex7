@@ -41,6 +41,7 @@ export const HomePage = () => {
       .catch((error) => {
         console.log("erro na requisição", error);
         setLogin(false)
+        history.push('/error')
       });
   }, []);
 
@@ -56,6 +57,7 @@ export const HomePage = () => {
     .catch((err) => {
       console.log("erro na requisição", err);
       setLogin(false)
+      history.push('/error')
     })
   }
 

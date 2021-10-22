@@ -5,6 +5,7 @@ import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import { GlobalContext } from "../context/GlobalContext"
 import Login from "../components/Login"
+import { useHistory } from "react-router-dom"
 
 const Container = styledComponentsCjs.div `
     display: flex;
@@ -120,6 +121,7 @@ export const DetailsPage = () => {
     const params = useParams()
     const url = `https://pokeapi.co/api/v2/pokemon/${params.name}`
     const {login, setLogin} = useContext(GlobalContext)
+    const history = useHistory()
 
     useEffect(() => {
         setLogin(true)
@@ -132,6 +134,7 @@ export const DetailsPage = () => {
         .catch((err) => {
             window.alert("Ocorreu um erro! Tente novamente.")
             setLogin(false)
+            history.push('/error')
         })
     }, [url])
     
