@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom"
 import Background from '../img/background.gif'
 import styledComponentsCjs from 'styled-components'
 import { Button } from '@mui/material'
+import Music from '../sound/music.mp3'
 
 const BattleContainer = styledComponentsCjs.div `
     display: flex;
@@ -15,6 +16,12 @@ const BattleContainer = styledComponentsCjs.div `
     margin-bottom: 15rem;
     min-height: 80vh;
     font-family: 'Roboto';
+
+    @media screen and (min-device-width: 200px) and (max-device-width: 667px) {
+        h2 {
+            font-size: 1.3em;
+        }
+    }
 `
 
 const Battlefield = styledComponentsCjs.div `
@@ -27,6 +34,12 @@ const Battlefield = styledComponentsCjs.div `
         border-radius: 0.3rem;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     }
+
+    @media screen and (min-device-width: 200px) and (max-device-width: 667px) {
+        img {
+            width: 23rem;
+        }
+    }
 `
 
 const AlignPokeUser = styledComponentsCjs.div `
@@ -38,7 +51,16 @@ const AlignPokeUser = styledComponentsCjs.div `
     margin-left: -14rem;
 
     img {
-        width: 5rem;
+        width: 6rem;
+    }
+
+    @media screen and (min-device-width: 200px) and (max-device-width: 667px) {
+        margin-top: -6rem;
+        margin-left: -8rem;
+
+        img {
+            width: 4rem;
+        }
     }
 `
 
@@ -51,29 +73,62 @@ const AlignPokeComputer = styledComponentsCjs.div `
     margin-left: 16rem;
 
     img {
-        width: 5rem;
+        width: 4rem;
+    }
+
+    @media screen and (min-device-width: 200px) and (max-device-width: 667px) {
+        margin-top: -7rem;
+        margin-left: 8rem;
+        img {
+            width: 3rem;
+        }
     }
 `
 
 const ContainerResultado = styledComponentsCjs.div`
-    margin-left:17vw;
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: row;
     text-transform: capitalize;
     font-family: 'Roboto';
-    margin-top: -8rem;
+    background-color: #FFFFFF;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+    @media screen and (min-device-width: 200px) and (max-device-width: 667px) {
+        margin-bottom: 1rem;
+    }
+    
 `
 const ContainerPlacar = styledComponentsCjs.div`
     font-family: 'Roboto';
     display: flex;
     flex-direction: column;
-    margin-left: -15rem;
+    background-color: #FFFFFF;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+    @media screen and (min-device-width: 200px) and (max-device-width: 667px) {
+        margin-bottom: 1rem;
+    }
 `
 
 const ContainerSecundario = styledComponentsCjs.div`
-    display:flex;
-    flex-direction: column;
+    display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     margin-top: 14rem;
+
+    @media screen and (min-device-width: 200px) and (max-device-width: 667px) {
+        margin-top: 8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 `
 
 const AlignResultButtons = styledComponentsCjs.div `
@@ -81,6 +136,12 @@ const AlignResultButtons = styledComponentsCjs.div `
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 1rem;
+`
+
+const BattleAudio = styledComponentsCjs.audio `
+    height: 2rem;
+    width: 14rem;
 `
 
 function BattlePage () {
@@ -179,10 +240,6 @@ function BattlePage () {
                     <h5>Placar da Batalha:</h5>
                     <h5>{pokeComputer.name} {pontosComputer} X {pontosUser} {pokeUser.name} </h5>
                     </div>
-                    {/* <AlignResultButtons>
-                        <Button variant={"contained"} color={"primary"} size="small" onClick={onClickNewBattle} >Nova batalha com {pokeUser.name}</Button>
-                        <Button variant={"contained"} color={"primary"} size="small" onClick={goToPokedex} >Escolher novo Pokemon na Pokedex</Button>
-                    </AlignResultButtons> */}
                 </div>
             )
         } else if (pontosComputer < pontosUser){
@@ -194,10 +251,6 @@ function BattlePage () {
                     <h5>Placar da Batalha:</h5>
                     <h5>{pokeComputer.name} {pontosComputer} X {pontosUser} {pokeUser.name} </h5>
                     </div>
-                    {/* <AlignResultButtons>
-                        <Button variant={"contained"} color={"primary"} size="small" onClick={onClickNewBattle} >Nova batalha com {pokeUser.name}</Button>
-                        <Button variant={"contained"} color={"primary"} size="small" onClick={goToPokedex} >Escolher novo Pokemon na Pokedex</Button>
-                    </AlignResultButtons> */}
                 </div>
             )
         } else{
@@ -208,10 +261,6 @@ function BattlePage () {
                     <h5>Placar da Batalha:</h5>
                     <h5>{pokeComputer.name} {pontosComputer} X {pontosUser} {pokeUser.name} </h5>
                     </div>
-                    {/* <AlignResultButtons>
-                        <Button variant={"contained"} color={"primary"} size="small" onClick={onClickNewBattle} >Nova batalha com {pokeUser.name}</Button>
-                        <Button variant={"contained"} color={"primary"} size="small" onClick={goToPokedex} >Escolher novo Pokemon na Pokedex</Button>
-                    </AlignResultButtons> */}
                 </div>
             )
         }
@@ -220,6 +269,7 @@ function BattlePage () {
 
     return(
         <BattleContainer>
+            <BattleAudio src={Music} controls />
             <h2>Um Pokémon selvagem apareceu!</h2>
             <Battlefield>
                 <img src={Background} alt="Campo de batalha" />
@@ -248,12 +298,11 @@ function BattlePage () {
                     {pokeComputer.stats &&(renderizaVencedeor())}
                 </ContainerResultado>
 
-                    <AlignResultButtons>
+            </ContainerSecundario>
+            <AlignResultButtons>
                         <Button style={{marginBottom: '1rem'}} variant={"contained"} color={"primary"} size="small" onClick={onClickNewBattle} >Nova batalha com {pokeUser.name}</Button>
                         <Button variant={"contained"} color={"primary"} size="small" onClick={goToPokedex} >Escolher novo Pokemon na Pokedex</Button>
                     </AlignResultButtons>
-
-            </ContainerSecundario>
         </BattleContainer>
     )
 }
