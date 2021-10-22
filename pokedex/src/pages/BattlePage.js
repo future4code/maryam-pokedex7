@@ -4,15 +4,17 @@ import { useParams } from "react-router-dom"
 import { useHistory } from "react-router-dom"
 import Background from '../img/background.gif'
 import styledComponentsCjs from 'styled-components'
+import { Button } from '@mui/material'
 
 const BattleContainer = styledComponentsCjs.div `
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 3rem;
+    margin-top: 2rem;
     margin-bottom: 15rem;
     min-height: 80vh;
+    font-family: 'Roboto';
 `
 
 const Battlefield = styledComponentsCjs.div `
@@ -45,7 +47,7 @@ const AlignPokeComputer = styledComponentsCjs.div `
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: -11rem;
+    margin-top: -12rem;
     margin-left: 16rem;
 
     img {
@@ -54,18 +56,31 @@ const AlignPokeComputer = styledComponentsCjs.div `
 `
 
 const ContainerResultado = styledComponentsCjs.div`
-    margin-left:15vw;
-    text-transform: capitalize
+    margin-left:17vw;
+    text-transform: capitalize;
+    font-family: 'Roboto';
+    margin-top: -8rem;
 `
 const ContainerPlacar = styledComponentsCjs.div`
-    margin-left:15vw;
+    font-family: 'Roboto';
+    display: flex;
+    flex-direction: column;
+    margin-left: -15rem;
 `
 
 const ContainerSecundario = styledComponentsCjs.div`
     display:flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 30vh
+    margin-top: 14rem;
+`
+
+const AlignResultButtons = styledComponentsCjs.div `
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 `
 
 function BattlePage () {
@@ -159,38 +174,44 @@ function BattlePage () {
             // setScoreComputer(scoreComputer + 1)
             return(
                 <div>
+                    <div>
                     <h3>{pokeComputer.name} venceu!</h3>
                     <h5>Placar da Batalha:</h5>
                     <h5>{pokeComputer.name} {pontosComputer} X {pontosUser} {pokeUser.name} </h5>
-                    <div>
-                        <button onClick={onClickNewBattle} >Nova batalha com {pokeUser.name}</button>
-                        <button onClick={goToPokedex} >Escolher novo Pokemon na Pokedex</button>
                     </div>
+                    {/* <AlignResultButtons>
+                        <Button variant={"contained"} color={"primary"} size="small" onClick={onClickNewBattle} >Nova batalha com {pokeUser.name}</Button>
+                        <Button variant={"contained"} color={"primary"} size="small" onClick={goToPokedex} >Escolher novo Pokemon na Pokedex</Button>
+                    </AlignResultButtons> */}
                 </div>
             )
         } else if (pontosComputer < pontosUser){
             // setScoreUser(scoreUser + 1)
             return(
                 <div>
+                    <div>
                     <h3>{pokeUser.name} venceu!</h3>
                     <h5>Placar da Batalha:</h5>
                     <h5>{pokeComputer.name} {pontosComputer} X {pontosUser} {pokeUser.name} </h5>
-                    <div>
-                        <button onClick={onClickNewBattle} >Nova batalha com {pokeUser.name}</button>
-                        <button onClick={goToPokedex} >Escolher novo Pokemon na Pokedex</button>
                     </div>
+                    {/* <AlignResultButtons>
+                        <Button variant={"contained"} color={"primary"} size="small" onClick={onClickNewBattle} >Nova batalha com {pokeUser.name}</Button>
+                        <Button variant={"contained"} color={"primary"} size="small" onClick={goToPokedex} >Escolher novo Pokemon na Pokedex</Button>
+                    </AlignResultButtons> */}
                 </div>
             )
         } else{
             return(
                 <div>
+                    <div>
                     <h3>Empate!</h3>
                     <h5>Placar da Batalha:</h5>
                     <h5>{pokeComputer.name} {pontosComputer} X {pontosUser} {pokeUser.name} </h5>
-                    <div>
-                        <button onClick={onClickNewBattle} >Nova batalha com {pokeUser.name}</button>
-                        <button onClick={goToPokedex} >Escolher novo Pokemon na Pokedex</button>
                     </div>
+                    {/* <AlignResultButtons>
+                        <Button variant={"contained"} color={"primary"} size="small" onClick={onClickNewBattle} >Nova batalha com {pokeUser.name}</Button>
+                        <Button variant={"contained"} color={"primary"} size="small" onClick={goToPokedex} >Escolher novo Pokemon na Pokedex</Button>
+                    </AlignResultButtons> */}
                 </div>
             )
         }
@@ -199,6 +220,7 @@ function BattlePage () {
 
     return(
         <BattleContainer>
+            <h2>Um Pokémon selvagem apareceu!</h2>
             <Battlefield>
                 <img src={Background} alt="Campo de batalha" />
                 </Battlefield>
@@ -219,13 +241,18 @@ function BattlePage () {
             <ContainerSecundario>
 
                 <ContainerPlacar>
-                    <h1>Placar:</h1>
+                    <h2>Placar:</h2>
                     <h3>Jogador {scoreUser} X {scoreComputer} Computador</h3>
                 </ContainerPlacar>
                 <ContainerResultado>
                     {pokeComputer.stats &&(renderizaVencedeor())}
                 </ContainerResultado>
-                
+
+                    <AlignResultButtons>
+                        <Button style={{marginBottom: '1rem'}} variant={"contained"} color={"primary"} size="small" onClick={onClickNewBattle} >Nova batalha com {pokeUser.name}</Button>
+                        <Button variant={"contained"} color={"primary"} size="small" onClick={goToPokedex} >Escolher novo Pokemon na Pokedex</Button>
+                    </AlignResultButtons>
+
             </ContainerSecundario>
         </BattleContainer>
     )
