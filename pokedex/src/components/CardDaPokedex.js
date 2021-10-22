@@ -299,8 +299,12 @@ export default function ImgMediaCard(props) {
     }
     })
 
+    const selectThePoke = () => {
+      window.alert("Pokémon selecionado!")
+    }
+
   return (
-    <Card onClick={() => props.selecionaPokemon(props.name)} sx={{ minWidth: 275, maxWidth: 365 }}>
+    <Card sx={{ minWidth: 275, maxWidth: 365 }}>
       <AlignPhotos>
       <PokePhoto
         component="img"
@@ -324,6 +328,7 @@ export default function ImgMediaCard(props) {
       <AlignButtons>
         <Button variant={"contained"} color={"primary"} size="small" onClick={onClickExcluir} >EXCLUIR</Button>
         <Button size="small"  onClick={() => props.onClickDetalhe(props.name)}>DETALHES</Button>
+        <Button variant={"contained"} color={"primary"} size="small" onClick={() => { props.selecionaPokemon(props.name); selectThePoke();}}>SELECIONAR</Button>
       </AlignButtons>
     </Card>
   )
